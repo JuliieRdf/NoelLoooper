@@ -206,6 +206,11 @@ body {
 .intro-paragraphe {
     letter-spacing: 0.01rem;
 }
+.intro-paragraphe img{
+    width: 100%;
+    max-width: 800px;
+}
+
 
 
 .zoom-center-title {
