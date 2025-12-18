@@ -134,14 +134,28 @@
             <h2 id="testCode" class="h2 black white-border">Vérifier le code</h2>
 
             <div class="digits">
-                <input type="number" min="0" max="9" id="d1">
-                <input type="number" min="0" max="9" id="d2">
-                <input type="number" min="0" max="9" id="d3">
+                <input type="number" min="0" max="9" id="d1" class="digit">
+                <input type="number" min="0" max="9" id="d2" class="digit">
+                <input type="number" min="0" max="9" id="d3" class="digit">
             </div>
+            <script>
+                document.querySelectorAll('.digit').forEach(input => {
+                    input.addEventListener('input', () => {
+                        if (input.value === '') return;
 
-            <button class="text-typo btn-project btn-white-background" onclick="checkCode()">Valider</button>
+                        let value = parseInt(input.value, 10);
+
+                        if (value < 0) input.value = 0;
+                        else if (value > 9) input.value = 9;
+                        else input.value = value;
+                    });
+                });
+            </script>
 
             <p id="message"></p>
+            <button class="text-typo btn-project btn-white-background" onclick="checkCode()">Valider</button>
+
+
 
 
 

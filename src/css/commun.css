@@ -2059,3 +2059,15 @@ input[type="checkbox"]::after {
     transform: none;
 }
 
+.affichage-center {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.affichage-center img {
+    width: 100%;
+    max-width: 800px;
+}
