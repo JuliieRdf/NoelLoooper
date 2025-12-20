@@ -129,7 +129,8 @@
 
         <div class="medium-spacing"></div>
 
-        <section class="container-width" style=" display: flex; flex-direction: column;  gap: 40px;">
+        <section class="container-width"
+            style=" display: flex; align-items: center; justify-content: center; flex-direction: column;  gap: 40px;">
 
             <h2 id="testCode" class="h2 black white-border">Vérifier le code</h2>
 
@@ -138,25 +139,12 @@
                 <input type="number" min="0" max="9" id="d2" class="digit">
                 <input type="number" min="0" max="9" id="d3" class="digit">
             </div>
-            <script>
-                document.querySelectorAll('.digit').forEach(input => {
-                    input.addEventListener('input', () => {
-                        if (input.value === '') return;
-
-                        let value = parseInt(input.value, 10);
-
-                        if (value < 0) input.value = 0;
-                        else if (value > 9) input.value = 9;
-                        else input.value = value;
-                    });
-                });
-            </script>
-
             <p id="message"></p>
-            <button class="text-typo btn-project btn-white-background" onclick="checkCode()">Valider</button>
+            <button class="text-typo btn-project btn-white-background"
+                onclick="checkCode()"><span>Valider</span></button>
 
 
-
+            <div class="small-spacing"></div>
 
 
         </section>
@@ -170,6 +158,20 @@
     <div class="cursor-ring">
         <div class="cursor"></div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        document.querySelectorAll('.digit').forEach(input => {
+            input.addEventListener('input', () => {
+                if (input.value === '') return;
+
+                let value = parseInt(input.value, 10);
+
+                if (value < 0) input.value = 0;
+                else if (value > 9) input.value = 9;
+                else input.value = value;
+            });
+        });
+    </script>
     <script src="src/js/mouse.js"></script>
     <script src="src/js/logoAnnim.js"></script>
     <script src="src/js/scrollAnnimWhiteContainer.js"></script>
